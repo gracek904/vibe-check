@@ -16,7 +16,6 @@
   "content_scripts": [
     {
       "matches": ["http://*/*"],
-      "css": ["styles.css"],
       "js": ["popup.js"]
     }
   ]
