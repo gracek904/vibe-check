@@ -1,1 +1,6 @@
-
+{
+  "name": "Vibe Check",
+  "version": "1.0",
+  "description": "What starts here changes the wurlD",
+  "manifest_version": 2
+}
