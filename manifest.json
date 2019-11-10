@@ -10,8 +10,8 @@
   "content_scripts": [
     {
       "all_frames": true,
-      "matches": ["https://*/*"],
-      "js": ["index.js", "jquery-3.4.1.min.js"]
+      "matches": ["<all_urls>"],
+      "js": ["popup.js", "jquery-3.4.1.min.js"]
     }
   ]
 }

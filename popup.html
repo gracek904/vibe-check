@@ -1,9 +1,67 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script src="path/to/your/script.js"></script>
+<script src="index.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!DOCTYPE html>
+<script>
+  console.log("AYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY HTML");
+
+  curl "https://language.googleapis.com/v1/documents:analyzeSentiment?key=${545Ma0mxtAIRv8rC7sbpjgfXe0OHr7v9M2gNjzgeke0}" \
+  -s -X POST -H "Content-Type: application/json" --data-binary @request.json
+
+  var call = {
+    "document":{
+    "type":"PLAIN_TEXT",
+            "language": "EN",
+            "content":"'Lawrence of Arabia' is a highly rated film biography about"
+              + "British Lieutenant T. E. Lawrence. Peter O'Toole plays"
+               + "Lawrence in the film."
+  },
+    "encodingType":"UTF8"
+  }
+
+    var settings = {
+        url: "https://apis.paralleldots.com/v4/emotion",
+        method: "POST",
+        async: true,
+        crossDomain: true,
+        data: {
+            api_key: "545Ma0mxtAIRv8rC7sbpjgfXe0OHr7v9M2gNjzgeke0",
+            text: "I love you"
+        },
+        success: function (data, textStauts, jqXHR) {
+            alert("Success");
+        }
+    };
+
+    $.ajax(settings).done(function (response) {
+        var emotion = [];
+
+        fetch("https://apis.paralleldots.com/v4/emotion").then(function (response) {
+            if (response != null) {
+                response.json().then(function (data) {
+                    console.log(data);
+                });
+            } else {
+                // Response wasn't ok. Check dev tools
+                console.log("response failed?");
+            }
+        });
+
+        console.log(response);
+        emotion = response.emotion;
+        console.log(emotion);
+    });
+
+
+</script>
 <html>
-  <head> </head>
-  <body>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-  </body>
+<head>
+
+</head>
+
+
+<body>
+</body>
 </html>
+<script>$(function () {
+    alert('hello')
+});</script>
