@@ -7,12 +7,10 @@
     "default_icon": "icon.png"
   },
   "background": {
-    "persistent": false,
     "scripts": ["background.js"]
   },
   "permissions": [
     "activeTab",
-    "tabs",
-    "storage"
+    "tabs"
   ]
 }
