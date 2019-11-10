@@ -1,7 +1,19 @@
 
 /* get words you need to cross out and store in var*/
 
-var badWords = document.getElementsByTagName('img');
-for (var i = 0, l = badWords.length; i < l; i++) {
-    badWords[i].src = 'http://placekitten.com/' + badWords[i].width + '/' + badWords[i].height;
+let badWords = document.getElementsByTagName("p")
+for (let i = 0; i < badWords.length; i++) {
+    let str = "";
+    let st = badWords.[i].innerText
+    for (let j = 0, s = st; j < s.length; j++)
+        var c = s.charAt(j)
+        if(c !== "\n"){
+            str += " "
+        } else {
+            str += "\n"
+        }
+
+    badWords[i].innerText = str;
+
 }
+
