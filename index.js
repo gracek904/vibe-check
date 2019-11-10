@@ -10,6 +10,10 @@ var settings = {
   success: function(data, textStauts, jqXHR) {
     alert("Success");
   }
+
+
+
+
   // headers: {
   //   "Content-Type": "application/x-www-form-urlencoded"
   // }
@@ -34,6 +38,7 @@ fetch("https://apis.paralleldots.com/v4/emotion", otherPram)
     console.log(res);
   });
 
+let $;
 $.ajax(settings).done(function(response) {
   var emotion = [];
 
