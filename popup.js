@@ -1,128 +1,17 @@
-let tags =
-["a",
-"abbr",
-"acronym",
-"applet",
-"area",
-"article",
-"aside",
-"b",
-"base",
-"basefont",
-"bdi",
-"bdo",
-"big",
-"blink",
-"blockquote",
-"body",
-"br",
-"button",
-"canvas",
-"caption",
-"center",
-"cite",
-"code",
-"col",
-"colgroup",
-"content",
-"data",
-"datalist",
-"dd",
-"decorator",
-"del",
-"details",
-"dfn",
-"dir",
-"div",
-"dl",
-"dt",
-"element",
-"em",
-"embed",
-"fieldset",
-"figcaption",
-"figure",
-"font",
-"footer",
-"form",
-"frame",
-"frameset",
-"h1",
-"h2",
-"h3",
-"h4",
-"h5",
-"h6",
-"head",
-"header",
-"hgroup",
-"hr",
-"html",
-"i",
-"input",
-"ins",
-"isindex",
-"kbd",
-"keygen",
-"label",
-"legend",
-"li",
-"link",
-"listing",
-"main",
-"map",
-"mark",
-"marquee",
-"menu",
-"menuitem",
-"meta",
-"meter",
-"nav",
-"nobr",
-"noframes",
-"ol",
-"optgroup",
-"option",
-"output",
-"p",
-"param",
-"plaintext",
-"pre",
-"q",
-"rp",
-"rt",
-"s",
-"samp",
-"section",
-"select",
-"small",
-"source",
-"span",
-"strike",
-"strong",
-"style",
-"sub",
-"summary",
-"sup",
-"td",
-"th",
-"thead",
-"title",
-"tr",
-"tt",
-"u",
-"ul",
-"var",
-"xmp"]
+let textNodes = deepText(document.getElementsByTagName('body')[0])
+for(let i = 0; i < textNodes.length; i++) {
+  textNodes[i].nodeValue = ""
+}
 
-for(let i = 0; i < tags.length; i++) {
-  let badWords = document.getElementsByTagName(tags[i])
-  for (let j = 0; j < badWords.length; j++) {
-    // every element on the page
-    let elem = badWords[i]
-    if (typeof elem !== 'undefined' && typeof elem !== null
-    && elem.childElementCount === 1 && elem.firstChild.nodeValue !== null){
-      elem.style.opacity = 0.0
+function deepText(node){
+  var A= [];
+  if(node){
+    node= node.firstChild;
+    while(node!= null){
+      if(node.nodeType== 3) A[A.length]=node;
+      else A= A.concat(deepText(node));
+      node= node.nextSibling;
     }
   }
+  return A;
 }
