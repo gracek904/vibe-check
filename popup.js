@@ -3,17 +3,9 @@
 
 let badWords = document.getElementsByTagName("p")
 for (let i = 0; i < badWords.length; i++) {
-    let str = "";
-    let st = badWords.[i].innerText
-    for (let j = 0, s = st; j < s.length; j++)
-        var c = s.charAt(j)
-        if(c !== "\n"){
-            str += " "
-        } else {
-            str += "\n"
-        }
-
-    badWords[i].innerText = str;
-
+    // let color = badWords[i].style.color;
+    // console.log(color)
+    // let ourColor = color.length > 0 ? color : "black"
+    // badWords[i].style.backgroundColor = color;
+    badWords[i].style.visibility = "none"
 }
-
