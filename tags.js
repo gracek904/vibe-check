@@ -1,16 +1,18 @@
-let tags =
-["a",
+list = ["a",
 "abbr",
 "acronym",
+"address",
 "applet",
 "area",
 "article",
 "aside",
+"audio",
 "b",
 "base",
 "basefont",
 "bdi",
 "bdo",
+"bgsound",
 "big",
 "blink",
 "blockquote",
@@ -59,6 +61,8 @@ let tags =
 "hr",
 "html",
 "i",
+"iframe",
+"img",
 "input",
 "ins",
 "isindex",
@@ -80,6 +84,8 @@ let tags =
 "nav",
 "nobr",
 "noframes",
+"noscript",
+"object",
 "ol",
 "optgroup",
 "option",
@@ -88,15 +94,20 @@ let tags =
 "param",
 "plaintext",
 "pre",
+"progress",
 "q",
 "rp",
 "rt",
+"ruby",
 "s",
 "samp",
+"script",
 "section",
 "select",
+"shadow",
 "small",
 "source",
+"spacer",
 "span",
 "strike",
 "strong",
@@ -104,23 +115,24 @@ let tags =
 "sub",
 "summary",
 "sup",
+"table",
+"tbody",
 "td",
+"template",
+"textarea",
+"tfoot",
 "th",
 "thead",
+"time",
 "title",
 "tr",
+"track",
 "tt",
 "u",
 "ul",
 "var",
+"video",
+"wbr",
 "xmp"]
 
-let tagsOnPage = Array.from(document.body.getElementsByTagName("*"))
-
-for(let i = 0; i < tags.length; i++) {
-  badWords = document.getElementsByTagName(tags[i])
-  for (let j = 0; j < badWords.length; j++) {
-    // every section on the page 
-    badWords[j].style.opacity = 0.0
-  }
-}
+export default const tags = list;
