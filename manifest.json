@@ -6,14 +6,9 @@
   "browser_action": {
     "default_popup": "popup.html"
   },
-
-  "background":
-  {
-    "script": "content.js"
-  },
-
   "permissions": [
     "activeTab",
-    "tabs"
+    "tabs",
+    "storage"
   ]
 }
