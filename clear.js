@@ -11,10 +11,10 @@ for(let i = 0; i < textNodes.length; i++) {
     http.open("POST", url, true);
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-    console.log(txt)
     http.onreadystatechange = function() {
       if (http.readyState === 4 && http.status === 200) {
         response = http.responseText
+        console.log(response + " " + response['abusive'])
         if(response['abusive'] > 0.5) {
           console.log(response + " cleared")
           textNodes[i].nodeValue = ""
