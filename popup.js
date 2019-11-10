@@ -115,12 +115,13 @@ let tags =
 "var",
 "xmp"]
 
-let tagsOnPage = Array.from(document.body.getElementsByTagName("*"))
-
 for(let i = 0; i < tags.length; i++) {
-  badWords = document.getElementsByTagName(tags[i])
+  let badWords = document.getElementsByTagName(tags[i])
   for (let j = 0; j < badWords.length; j++) {
-    // every section on the page 
-    badWords[j].style.opacity = 0.0
+    // every element on the page
+    let elem = badWords[i]
+    if(typeof elem !== 'undefined' && !elem.hasChildNodes()){
+      badWords[j].style.opacity = 0.0
+    }
   }
 }
