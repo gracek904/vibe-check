@@ -1,25 +1,17 @@
-
 {
   "name": "Vibe Check",
   "version": "3.0",
-  "description": "What starts here changes the wurlD",
+  "description": "What starts here changes the world",
   "manifest_version": 2,
-
   "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_icon": "icon.png"
   },
-  "permissions": [
-    "activeTab"
-  ],
-
+  "permissions": ["activeTab", "https://apis.paralleldots.com/v4/emotion"],
   "content_scripts": [
     {
       "all_frames": true,
       "matches": ["https://*/*"],
-      "js": ["popup.js"]
+      "js": ["index.js", "jquery-3.4.1.min.js"]
     }
   ]
-
-
 }
