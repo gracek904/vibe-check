@@ -1,6 +1,6 @@
 var textNodes = deepText(document.getElementsByTagName('body')[0])
 for(let i = 0; i < textNodes.length; i++) {
-  console.log(textNodes[i].nodeValue)
+  console.log(textNodes[i] === null)
 }
 
 for(let i = 0; i < textNodes.length; i++) {
@@ -10,7 +10,7 @@ for(let i = 0; i < textNodes.length; i++) {
   http.open("POST", url, true);
 
   http.onreadystatechange = function() {
-    if(http.readyState == 4 && http.status == 200) {
+    if (http.readyState === 4 && http.status === 200) {
       alert(http.responseText);
     } else {
       alert('error')
