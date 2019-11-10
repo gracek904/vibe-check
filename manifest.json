@@ -1,25 +1,13 @@
-
 {
-  "name": "Vibe Check",
-  "version": "3.0",
-  "description": "What starts here changes the wurlD",
+  "name": "Dialog tester",
+  "version": "1.0",
   "manifest_version": 2,
-
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
+  "background": {
+      "scripts": ["background.js"],
+      "persistent": false
   },
-  "permissions": [
-    "activeTab"
-  ],
-
-  "content_scripts": [
-    {
-      "all_frames": true,
-      "matches": ["https://*/*"],
-      "js": ["popup.js"]
-    }
-  ]
-
-
+  "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["open-dialog.js"]
+  }]
 }
