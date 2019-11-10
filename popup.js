@@ -120,7 +120,8 @@ for(let i = 0; i < tags.length; i++) {
   for (let j = 0; j < badWords.length; j++) {
     // every element on the page
     let elem = badWords[i]
-    if(typeof elem !== 'undefined' && !elem.hasChildNodes()){
+    if (typeof elem !== 'undefined' && typeof elem !== null
+    && elem.childElementCount === 1 && elem.firstChild === Node.TEXT_NODE){
       badWords[j].style.opacity = 0.0
     }
   }
